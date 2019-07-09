@@ -23,7 +23,8 @@
 
 /* varargs variations on compile time debug spew */
 
-# include <stdio.h>
+#include <stdio.h>
+#include <string.h>
 
 #ifndef DEBUG_LEVEL
 
@@ -69,11 +70,13 @@
 # endif
 #endif
 
+#define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__)
+
 # define zassert(condition, retval, format, ...) do {                   \
         if(!(condition)) {                                              \
             fprintf(stderr, "WARNING: %s:%d: %s:"                       \
                     " Assertion \"%s\" failed.\n\t" format,             \
-                    __FILE__, __LINE__, __func__, #condition ,          \
+                    __FILENAME__, __LINE__, __func__, #condition ,      \
                     ##__VA_ARGS__);                                     \
             return(retval);                                             \
         }                                                               \
