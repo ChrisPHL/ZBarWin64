@@ -109,14 +109,14 @@ JNI_OnUnload (JavaVM *_jvm,
 
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_SymbolSet_init (JNIEnv *env,
+Java_de_tangro_zbar_processing_SymbolSet_init (JNIEnv *env,
                                           jclass cls)
 {
     SymbolSet_peer = (*env)->GetFieldID(env, cls, "peer", "J");
 }
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_SymbolSet_destroy (JNIEnv *env,
+Java_de_tangro_zbar_processing_SymbolSet_destroy (JNIEnv *env,
                                              jobject obj,
                                              jlong peer)
 {
@@ -125,7 +125,7 @@ Java_net_sourceforge_zbar_SymbolSet_destroy (JNIEnv *env,
 }
 
 JNIEXPORT jint JNICALL
-Java_net_sourceforge_zbar_SymbolSet_size (JNIEnv *env,
+Java_de_tangro_zbar_processing_SymbolSet_size (JNIEnv *env,
                                           jobject obj)
 {
     zbar_symbol_set_t *zsyms = GET_PEER(SymbolSet, obj);
@@ -135,7 +135,7 @@ Java_net_sourceforge_zbar_SymbolSet_size (JNIEnv *env,
 }
 
 JNIEXPORT jlong JNICALL
-Java_net_sourceforge_zbar_SymbolSet_firstSymbol (JNIEnv *env,
+Java_de_tangro_zbar_processing_SymbolSet_firstSymbol (JNIEnv *env,
                                                  jobject obj,
                                                  jlong peer)
 {
@@ -152,14 +152,14 @@ Java_net_sourceforge_zbar_SymbolSet_firstSymbol (JNIEnv *env,
 
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_Symbol_init (JNIEnv *env,
+Java_de_tangro_zbar_processing_Symbol_init (JNIEnv *env,
                                        jclass cls)
 {
     Symbol_peer = (*env)->GetFieldID(env, cls, "peer", "J");
 }
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_Symbol_destroy (JNIEnv *env,
+Java_de_tangro_zbar_processing_Symbol_destroy (JNIEnv *env,
                                           jobject obj,
                                           jlong peer)
 {
@@ -168,7 +168,7 @@ Java_net_sourceforge_zbar_Symbol_destroy (JNIEnv *env,
 }
 
 JNIEXPORT jint JNICALL
-Java_net_sourceforge_zbar_Symbol_getType (JNIEnv *env,
+Java_de_tangro_zbar_processing_Symbol_getType (JNIEnv *env,
                                           jobject obj,
                                           jlong peer)
 {
@@ -176,21 +176,21 @@ Java_net_sourceforge_zbar_Symbol_getType (JNIEnv *env,
 }
 
 JNIEXPORT jint JNICALL
-Java_net_sourceforge_zbar_Symbol_getConfigMask (JNIEnv *env,
+Java_de_tangro_zbar_processing_Symbol_getConfigMask (JNIEnv *env,
                                                 jobject obj)
 {
     return(zbar_symbol_get_configs(GET_PEER(Symbol, obj)));
 }
 
 JNIEXPORT jint JNICALL
-Java_net_sourceforge_zbar_Symbol_getModifierMask (JNIEnv *env,
+Java_de_tangro_zbar_processing_Symbol_getModifierMask (JNIEnv *env,
                                                   jobject obj)
 {
     return(zbar_symbol_get_modifiers(GET_PEER(Symbol, obj)));
 }
 
 JNIEXPORT jstring JNICALL
-Java_net_sourceforge_zbar_Symbol_getData (JNIEnv *env,
+Java_de_tangro_zbar_processing_Symbol_getData (JNIEnv *env,
                                           jobject obj)
 {
     const char *data = zbar_symbol_get_data(GET_PEER(Symbol, obj));
@@ -198,7 +198,7 @@ Java_net_sourceforge_zbar_Symbol_getData (JNIEnv *env,
 }
 
 JNIEXPORT jstring JNICALL
-Java_net_sourceforge_zbar_Symbol_getDataBytes (JNIEnv *env,
+Java_de_tangro_zbar_processing_Symbol_getDataBytes (JNIEnv *env,
                                                jobject obj)
 {
     const zbar_symbol_t *zsym = GET_PEER(Symbol, obj);
@@ -216,21 +216,21 @@ Java_net_sourceforge_zbar_Symbol_getDataBytes (JNIEnv *env,
 }
 
 JNIEXPORT jint JNICALL
-Java_net_sourceforge_zbar_Symbol_getQuality (JNIEnv *env,
+Java_de_tangro_zbar_processing_Symbol_getQuality (JNIEnv *env,
                                              jobject obj)
 {
     return(zbar_symbol_get_quality(GET_PEER(Symbol, obj)));
 }
 
 JNIEXPORT jint JNICALL
-Java_net_sourceforge_zbar_Symbol_getCount (JNIEnv *env,
+Java_de_tangro_zbar_processing_Symbol_getCount (JNIEnv *env,
                                            jobject obj)
 {
     return(zbar_symbol_get_count(GET_PEER(Symbol, obj)));
 }
 
 JNIEXPORT jint JNICALL
-Java_net_sourceforge_zbar_Symbol_getLocationSize (JNIEnv *env,
+Java_de_tangro_zbar_processing_Symbol_getLocationSize (JNIEnv *env,
                                                   jobject obj,
                                                   jlong peer)
 {
@@ -238,7 +238,7 @@ Java_net_sourceforge_zbar_Symbol_getLocationSize (JNIEnv *env,
 }
 
 JNIEXPORT jint JNICALL
-Java_net_sourceforge_zbar_Symbol_getLocationX (JNIEnv *env,
+Java_de_tangro_zbar_processing_Symbol_getLocationX (JNIEnv *env,
                                                jobject obj,
                                                jlong peer,
                                                jint idx)
@@ -247,7 +247,7 @@ Java_net_sourceforge_zbar_Symbol_getLocationX (JNIEnv *env,
 }
 
 JNIEXPORT jint JNICALL
-Java_net_sourceforge_zbar_Symbol_getLocationY (JNIEnv *env,
+Java_de_tangro_zbar_processing_Symbol_getLocationY (JNIEnv *env,
                                                jobject obj,
                                                jlong peer,
                                                jint idx)
@@ -256,14 +256,14 @@ Java_net_sourceforge_zbar_Symbol_getLocationY (JNIEnv *env,
 }
 
 JNIEXPORT jint JNICALL
-Java_net_sourceforge_zbar_Symbol_getOrientation (JNIEnv *env,
+Java_de_tangro_zbar_processing_Symbol_getOrientation (JNIEnv *env,
                                                  jobject obj)
 {
     return(zbar_symbol_get_orientation(GET_PEER(Symbol, obj)));
 }
 
 JNIEXPORT jlong JNICALL
-Java_net_sourceforge_zbar_Symbol_getComponents (JNIEnv *env,
+Java_de_tangro_zbar_processing_Symbol_getComponents (JNIEnv *env,
                                                 jobject obj,
                                                 jlong peer)
 {
@@ -277,7 +277,7 @@ Java_net_sourceforge_zbar_Symbol_getComponents (JNIEnv *env,
 }
 
 JNIEXPORT jlong JNICALL
-Java_net_sourceforge_zbar_Symbol_next (JNIEnv *env,
+Java_de_tangro_zbar_processing_Symbol_next (JNIEnv *env,
                                        jobject obj)
 {
     const zbar_symbol_t *zsym = zbar_symbol_next(GET_PEER(Symbol, obj));
@@ -332,7 +332,7 @@ Image_cleanupIntArray (zbar_image_t *zimg)
 
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_Image_init (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_init (JNIEnv *env,
                                       jclass cls)
 {
     Image_peer = (*env)->GetFieldID(env, cls, "peer", "J");
@@ -340,7 +340,7 @@ Java_net_sourceforge_zbar_Image_init (JNIEnv *env,
 }
 
 JNIEXPORT jlong JNICALL
-Java_net_sourceforge_zbar_Image_create (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_create (JNIEnv *env,
                                         jobject obj)
 {
     zbar_image_t *zimg = zbar_image_create();
@@ -353,7 +353,7 @@ Java_net_sourceforge_zbar_Image_create (JNIEnv *env,
 }
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_Image_destroy (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_destroy (JNIEnv *env,
                                          jobject obj,
                                          jlong peer)
 {
@@ -362,7 +362,7 @@ Java_net_sourceforge_zbar_Image_destroy (JNIEnv *env,
 }
 
 JNIEXPORT jlong JNICALL
-Java_net_sourceforge_zbar_Image_convert (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_convert (JNIEnv *env,
                                          jobject obj,
                                          jlong peer,
                                          jstring format)
@@ -380,7 +380,7 @@ Java_net_sourceforge_zbar_Image_convert (JNIEnv *env,
 }
 
 JNIEXPORT jstring JNICALL
-Java_net_sourceforge_zbar_Image_getFormat (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_getFormat (JNIEnv *env,
                                            jobject obj)
 {
     uint32_t fourcc = zbar_image_get_format(GET_PEER(Image, obj));
@@ -391,7 +391,7 @@ Java_net_sourceforge_zbar_Image_getFormat (JNIEnv *env,
 }
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_Image_setFormat (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_setFormat (JNIEnv *env,
                                            jobject obj,
                                            jstring format)
 {
@@ -402,14 +402,14 @@ Java_net_sourceforge_zbar_Image_setFormat (JNIEnv *env,
 }
 
 JNIEXPORT jint JNICALL
-Java_net_sourceforge_zbar_Image_getSequence (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_getSequence (JNIEnv *env,
                                              jobject obj)
 {
     return(zbar_image_get_sequence(GET_PEER(Image, obj)));
 }
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_Image_setSequence (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_setSequence (JNIEnv *env,
                                              jobject obj,
                                              jint seq)
 {
@@ -417,21 +417,21 @@ Java_net_sourceforge_zbar_Image_setSequence (JNIEnv *env,
 }
 
 JNIEXPORT jint JNICALL
-Java_net_sourceforge_zbar_Image_getWidth (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_getWidth (JNIEnv *env,
                                           jobject obj)
 {
     return(zbar_image_get_width(GET_PEER(Image, obj)));
 }
 
 JNIEXPORT jint JNICALL
-Java_net_sourceforge_zbar_Image_getHeight (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_getHeight (JNIEnv *env,
                                            jobject obj)
 {
     return(zbar_image_get_height(GET_PEER(Image, obj)));
 }
 
 JNIEXPORT jobject JNICALL
-Java_net_sourceforge_zbar_Image_getSize (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_getSize (JNIEnv *env,
                                          jobject obj)
 {
     jintArray size = (*env)->NewIntArray(env, 2);
@@ -446,7 +446,7 @@ Java_net_sourceforge_zbar_Image_getSize (JNIEnv *env,
 }
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_Image_setSize__II (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_setSize__II (JNIEnv *env,
                                              jobject obj,
                                              jint width,
                                              jint height)
@@ -457,7 +457,7 @@ Java_net_sourceforge_zbar_Image_setSize__II (JNIEnv *env,
 }
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_Image_setSize___3I (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_setSize___3I (JNIEnv *env,
                                               jobject obj,
                                               jintArray size)
 {
@@ -472,7 +472,7 @@ Java_net_sourceforge_zbar_Image_setSize___3I (JNIEnv *env,
 }
 
 JNIEXPORT jobject JNICALL
-Java_net_sourceforge_zbar_Image_getCrop (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_getCrop (JNIEnv *env,
                                          jobject obj)
 {
     jintArray crop = (*env)->NewIntArray(env, 4);
@@ -494,7 +494,7 @@ Java_net_sourceforge_zbar_Image_getCrop (JNIEnv *env,
     }
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_Image_setCrop__IIII (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_setCrop__IIII (JNIEnv *env,
                                                jobject obj,
                                                jint x, jint y,
                                                jint w, jint h)
@@ -505,7 +505,7 @@ Java_net_sourceforge_zbar_Image_setCrop__IIII (JNIEnv *env,
 }
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_Image_setCrop___3I (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_setCrop___3I (JNIEnv *env,
                                               jobject obj,
                                               jintArray crop)
 {
@@ -522,7 +522,7 @@ Java_net_sourceforge_zbar_Image_setCrop___3I (JNIEnv *env,
 #undef VALIDATE_CROP
 
 JNIEXPORT jobject JNICALL
-Java_net_sourceforge_zbar_Image_getData (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_getData (JNIEnv *env,
                                          jobject obj)
 {
     jobject data = (*env)->GetObjectField(env, obj, Image_data);
@@ -565,7 +565,7 @@ Image_setData (JNIEnv *env,
 }
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_Image_setData___3B (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_setData___3B (JNIEnv *env,
                                               jobject obj,
                                               jbyteArray data)
 {
@@ -581,7 +581,7 @@ Java_net_sourceforge_zbar_Image_setData___3B (JNIEnv *env,
 }
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_Image_setData___3I (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_setData___3I (JNIEnv *env,
                                               jobject obj,
                                               jintArray data)
 {
@@ -597,7 +597,7 @@ Java_net_sourceforge_zbar_Image_setData___3I (JNIEnv *env,
 }
 
 JNIEXPORT jlong JNICALL
-Java_net_sourceforge_zbar_Image_getSymbols (JNIEnv *env,
+Java_de_tangro_zbar_processing_Image_getSymbols (JNIEnv *env,
                                             jobject obj,
                                             jlong peer)
 {
@@ -611,14 +611,14 @@ Java_net_sourceforge_zbar_Image_getSymbols (JNIEnv *env,
 
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_ImageScanner_init (JNIEnv *env,
+Java_de_tangro_zbar_processing_ImageScanner_init (JNIEnv *env,
                                              jclass cls)
 {
     ImageScanner_peer = (*env)->GetFieldID(env, cls, "peer", "J");
 }
 
 JNIEXPORT jlong JNICALL
-Java_net_sourceforge_zbar_ImageScanner_create (JNIEnv *env,
+Java_de_tangro_zbar_processing_ImageScanner_create (JNIEnv *env,
                                                jobject obj)
 {
     zbar_image_scanner_t *zscn = zbar_image_scanner_create();
@@ -631,7 +631,7 @@ Java_net_sourceforge_zbar_ImageScanner_create (JNIEnv *env,
 }
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_ImageScanner_destroy (JNIEnv *env,
+Java_de_tangro_zbar_processing_ImageScanner_destroy (JNIEnv *env,
                                                 jobject obj,
                                                 jlong peer)
 {
@@ -640,7 +640,7 @@ Java_net_sourceforge_zbar_ImageScanner_destroy (JNIEnv *env,
 }
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_ImageScanner_setConfig (JNIEnv *env,
+Java_de_tangro_zbar_processing_ImageScanner_setConfig (JNIEnv *env,
                                                   jobject obj,
                                                   jint symbology,
                                                   jint config,
@@ -651,7 +651,7 @@ Java_net_sourceforge_zbar_ImageScanner_setConfig (JNIEnv *env,
 }
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_ImageScanner_parseConfig (JNIEnv *env,
+Java_de_tangro_zbar_processing_ImageScanner_parseConfig (JNIEnv *env,
                                                     jobject obj,
                                                     jstring cfg)
 {
@@ -664,7 +664,7 @@ Java_net_sourceforge_zbar_ImageScanner_parseConfig (JNIEnv *env,
 }
 
 JNIEXPORT void JNICALL
-Java_net_sourceforge_zbar_ImageScanner_enableCache (JNIEnv *env,
+Java_de_tangro_zbar_processing_ImageScanner_enableCache (JNIEnv *env,
                                                     jobject obj,
                                                     jboolean enable)
 {
@@ -672,7 +672,7 @@ Java_net_sourceforge_zbar_ImageScanner_enableCache (JNIEnv *env,
 }
 
 JNIEXPORT jlong JNICALL
-Java_net_sourceforge_zbar_ImageScanner_getResults (JNIEnv *env,
+Java_de_tangro_zbar_processing_ImageScanner_getResults (JNIEnv *env,
                                                    jobject obj,
                                                    jlong peer)
 {
@@ -686,7 +686,7 @@ Java_net_sourceforge_zbar_ImageScanner_getResults (JNIEnv *env,
 }
 
 JNIEXPORT jint JNICALL
-Java_net_sourceforge_zbar_ImageScanner_scanImage (JNIEnv *env,
+Java_de_tangro_zbar_processing_ImageScanner_scanImage (JNIEnv *env,
                                                   jobject obj,
                                                   jobject image)
 {

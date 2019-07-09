@@ -37,9 +37,6 @@
     <Filter Include="libiconv">
       <UniqueIdentifier>{e2dacc2b-2213-4f96-8644-4beb189727be}</UniqueIdentifier>
     </Filter>
-    <Filter Include="libiconv\Win32">
-      <UniqueIdentifier>{7bcceb33-fcbe-4c40-b373-ca58220c56b6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="libiconv\x64">
       <UniqueIdentifier>{78000995-0689-4f68-8d38-eb4dcc2f5677}</UniqueIdentifier>
     </Filter>
@@ -128,6 +125,9 @@
     </ClCompile>
     <ClCompile Include="zbar\decoder\databar.c">
       <Filter>Source Files\decoder</Filter>
+    </ClCompile>
+    <ClCompile Include="java\zbarjni.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -291,9 +291,6 @@
   <ItemGroup>
     <Library Include="zbar\libiconv\lib_x64\libiconv.lib">
       <Filter>libiconv\x64</Filter>
-    </Library>
-    <Library Include="zbar\libiconv\lib_win32\libiconv.lib">
-      <Filter>libiconv\Win32</Filter>
     </Library>
   </ItemGroup>
 </Project>
