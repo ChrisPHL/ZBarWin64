@@ -202,7 +202,7 @@
     <ClCompile Include="zbar\decoder\databar.c" />
     <ClCompile Include="zbar\processor\lock.c" />
     <ClCompile Include="zbar\processor\win.c" />
-    <ClCompile Include="zbar\zbarjni.c" />
+    <ClCompile Include="java\zbarjni.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include=".\include\config.h" />

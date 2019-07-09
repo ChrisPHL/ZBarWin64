@@ -38,6 +38,7 @@ Release/*
 x64/*
 UpgradeLog.htm
 zbar64.vcxproj.user
+zbar64.vcxproj
 zbar/libzbar.aps
 zbar/zbarjni.def
 java/net/.vs
