@@ -117,10 +117,13 @@ library.  see
 RUNNING
 =======
 
-'make install' will install the library and application programs.  Run
-'zbarcam' to start the video scanner.  use 'zbarimg barcode.jpg' to
-decode a saved image file.  Check the manual to find specific options
-for each program.
+1) checkout
+2) copy and rename zbar64.vcxproj - template in zbar64.vcxproj
+3) in the file zbar64.vcxproj update a path to java on the lines 97 and 161
+4) In vs File-Open-Project/Solution - choose your zbar64.vcxproj
+5) Choose Release and x64
+6) build
+7) x64\Release\zbarjni.dll
 
 
 REPORTING BUGS
