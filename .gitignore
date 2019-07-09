@@ -33,11 +33,11 @@ android/*.zip
 android/local.properties
 android/examples/*/local.properties
 .vs/*
-Debug*
-Release*
+Debug/*
+Release/*
+x64/*
 UpgradeLog.htm
 zbar64.vcxproj.user
-zbar64.vcxproj
 zbar/libzbar.aps
 zbar/zbarjni.def
 java/net/.vs
