@@ -42,3 +42,4 @@ zbar64.vcxproj
 zbar/libzbar.aps
 zbar/zbarjni.def
 java/net/.vs
+.gitattributes
